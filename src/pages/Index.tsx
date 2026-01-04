@@ -101,26 +101,31 @@ const Index = () => {
   };
 
   return (
-    <div className="flex h-screen bg-background overflow-hidden">
-      <Sidebar
-        currentView={currentView}
-        onViewChange={(view) => {
-          setCurrentView(view);
-          setSelectedSpace(null);
-          setSearchQuery(null);
-        }}
-        onCreateSpace={() => setIsCreateModalOpen(true)}
-      />
+  <div className="flex h-screen w-screen bg-background text-foreground">
+    
+    {/* Sidebar Navigation */}
+    <Sidebar
+      currentView={currentView}
+      onChangeView={setCurrentView}
+      onCreateSpace={() => setIsCreateModalOpen(true)}
+      onSearch={handleSearch}
+      onBack={handleBackToSpaces}
+    />
 
-      <main className="flex-1 overflow-hidden">{renderMainContent()}</main>
+    {/* Main Content Area */}
+    <main className="flex-1 overflow-auto">
+      {renderMainContent()}
+    </main>
 
-      <CreateSpaceModal
-        isOpen={isCreateModalOpen}
-        onClose={() => setIsCreateModalOpen(false)}
-        onCreate={handleCreateSpace}
-      />
-    </div>
-  );
+    {/* Create Space Modal */}
+    <CreateSpaceModal
+      open={isCreateModalOpen}
+      onOpenChange={setIsCreateModalOpen}
+      onCreate={handleCreateSpace}
+    />
+  </div>
+);
+
 };
 
 export default Index;

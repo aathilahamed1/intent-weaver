@@ -13,7 +13,7 @@ export const SettingsView = () => {
           <div>
             <h2 className="text-2xl font-bold text-foreground">Settings</h2>
             <p className="text-sm text-muted-foreground font-mono mt-1">
-              Configure IntentFS
+              Configure Intent Weaver
             </p>
           </div>
         </div>

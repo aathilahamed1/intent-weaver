@@ -11,14 +11,18 @@ type View = "spaces" | "files" | "settings";
 
 interface SidebarProps {
   currentView: View;
-  onViewChange: (view: View) => void;
+  onChangeView: (view: View) => void;
   onCreateSpace: () => void;
+  onSearch: (query: string) => void;
+  onBack: () => void;
 }
 
 export const Sidebar = ({
   currentView,
-  onViewChange,
+  onChangeView,
   onCreateSpace,
+  onSearch,
+  onBack,
 }: SidebarProps) => {
   const navItems = [
     { id: "spaces" as View, icon: LayoutGrid, label: "Spaces" },
@@ -36,7 +40,7 @@ export const Sidebar = ({
           </div>
           <div>
             <h1 className="font-bold text-lg text-foreground tracking-tight">
-              IntentFS
+              Intent Weaver
             </h1>
             <p className="text-xs text-muted-foreground font-mono">
               Find by intent
@@ -50,7 +54,7 @@ export const Sidebar = ({
         {navItems.map((item) => (
           <button
             key={item.id}
-            onClick={() => onViewChange(item.id)}
+            onClick={() => onChangeView(item.id)}
             className={cn(
               "nav-item w-full",
               currentView === item.id && "nav-item-active"
