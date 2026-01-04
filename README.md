@@ -1,138 +1,192 @@
-# Intent Weaver
+Intent Weaver — Find Files by Intent, Not Location
 
-A file management application with intent-based tagging and organization.
+Intent Weaver is an intelligent smart file management system that organizes and retrieves files based on meaning, purpose, and context, rather than traditional folder structure.
+It enables users to search files using natural intent such as:
 
-## Project Structure
+“Show my study materials”
 
-This project consists of two main parts:
-- **Frontend**: React application with Vite, TypeScript, and shadcn-ui
-- **Backend**: Node.js API with Express, MongoDB, and JWT authentication
+“Find Python projects”
 
-## Frontend Setup
+“Where are my college documents?”
 
-### Technologies Used
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+“Programming files”
 
-### Installation
+“Cooking notes”
 
-```sh
-# Clone the repository
-git clone <YOUR_GIT_URL>
+Instead of manually managing folders, Intent Weaver automatically groups files into Spaces such as:
+✔ Study
+✔ Programming
+✔ Work
+✔ Personal
+✔ Custom user-created spaces
 
-# Navigate to the project directory
-cd intent-weaver
+🚀 Features
+🔍 Intent-Based File Retrieval
 
-# Install dependencies
-npm install
+Search files using meaning instead of exact names or paths.
 
-# Start the development server
-npm run dev
-```
+🗂 Smart Spaces
 
-## Backend Setup
+Files are categorized automatically based on tags & context.
+Users can also create their own spaces.
 
-### Technologies Used
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- JWT Authentication
-- Swagger API Documentation
-- Winston Logging
-- Multer for file uploads
+📂 File Browser
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (local or cloud instance)
-- npm or yarn
+Browse, preview, and interact with files easily.
 
-### Installation
+🎯 AI-Like Search Experience
 
-```sh
-# Navigate to the backend directory
+Even without an LLM backend, search feels intelligent due to semantic mapping logic.
+
+⚙ Settings & Preferences
+
+Customizable configurations for user control.
+
+✔ Clean UI & UX
+
+Minimal, modern UI inspired by productivity tools.
+
+🛠 Tech Stack
+Frontend
+
+React
+
+TypeScript
+
+Vite
+
+TailwindCSS
+
+React Router
+
+ShadCN UI
+
+Sonner Toasts
+
+Zustand / State Handling
+
+Context + Hooks
+
+Backend
+
+Node.js
+
+Express.js
+
+REST APIs
+
+File metadata handling
+
+Secure routing
+
+Modular architecture
+
+Can easily be upgraded to AI-backed search using:
+
+OpenAI
+
+HuggingFace
+
+Sentence Transformers
+
+📦 Project Structure
+IntentWeaver
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── hooks
+│   │   ├── data
+│   │   ├── lib
+│   │   └── types
+│   ├── public
+│   └── index.html
+│
+└── backend
+    ├── routes
+    ├── controllers
+    ├── middleware
+    ├── models
+    ├── config
+    └── server.js
+
+🏃‍♂️ Running the Project
+1️⃣ Clone Repository
+git clone <repo-url>
+cd IntentWeaver
+
+2️⃣ Start Backend
 cd backend
-
-# Install dependencies
 npm install
+npm start
 
-# Create environment file
-cp .env.example .env
-# Edit .env with your configuration
-```
 
-### Environment Variables
+Backend runs on:
 
-Create a `.env` file in the backend directory with the following variables:
+http://localhost:5000
 
-```env
-NODE_ENV=development
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/intent-weaver
-JWT_SECRET=your-super-secret-jwt-key-here-change-in-production
-JWT_EXPIRE=7d
-UPLOAD_PATH=./uploads
-MAX_FILE_SIZE=10485760
-FRONTEND_URL=http://localhost:5173
-```
-
-### Running the Backend
-
-```sh
-# Development mode with auto-reload
+3️⃣ Start Frontend
+cd frontend
+npm install
 npm run dev
 
-# Production mode
-npm start
-```
 
-### API Documentation
+Frontend runs on:
 
-Once the server is running, visit `http://localhost:5000/api-docs` for Swagger API documentation.
+http://localhost:8080
 
-### Key Features
+🎯 Core Concepts
+🔹 Spaces
 
-- **Authentication**: JWT-based user authentication
-- **Spaces**: Organize files into categorized spaces
-- **File Management**: Upload, download, and organize files
-- **Tagging System**: Intent-based file tagging
-- **Search**: Full-text search across files and tags
-- **User Settings**: Customizable user preferences
+A “Space” represents a logical grouping of files.
+Example:
 
-### API Endpoints
+Study → syllabus, notes, assignments
 
-#### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user
-- `PUT /api/auth/updatedetails` - Update user details
-- `PUT /api/auth/updatepassword` - Update password
+Programming → projects, code, references
 
-#### Spaces
-- `GET /api/spaces` - Get all user spaces
-- `POST /api/spaces` - Create new space
-- `GET /api/spaces/:id` - Get space by ID
-- `PUT /api/spaces/:id` - Update space
-- `DELETE /api/spaces/:id` - Delete space
+Personal → photos, receipts, identity docs
 
-#### Files
-- `GET /api/files` - Get files with filters
-- `POST /api/files` - Upload file
-- `GET /api/files/:id` - Get file by ID
-- `PUT /api/files/:id` - Update file metadata
-- `DELETE /api/files/:id` - Delete file
-- `GET /api/files/:id/download` - Download file
+🔹 Search Intelligence
 
-## Deployment
+Instead of searching:
 
-### Frontend Deployment
-Deploy to any static hosting service (Vercel, Netlify, GitHub Pages, etc.).
+C:/Users/Documents/Project/
 
-### Backend Deployment
-Deploy to any Node.js hosting service (Heroku, Railway, DigitalOcean, etc.) with MongoDB.
 
-## Custom Domain
+You simply type:
 
-Configure custom domains through your hosting provider's settings.
+programming
+college
+pdf
+assignment
+
+
+and Intent Weaver finds it.
+
+🧪 Future Enhancements
+
+✔ AI-powered semantic search
+✔ Tag learning system
+✔ Cloud sync
+✔ Multi-user
+✔ Real filesystem integration
+✔ Desktop app (Electron)
+
+📸 Screenshots
+
+(Add screenshots when ready)
+
+👤 Author
+
+Aathil Ahamed
+AI/ML & Full Stack Enthusiast
+
+📜 License
+
+MIT — Free to use, modify, and distribute.
+
+⭐ If This Helped
+
+Star the repo… it helps a lot.
